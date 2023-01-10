@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <!-- <TemplatesNav @colorChoice="color"></TemplatesNav> -->
-    <Nav @colorChoice="color" />
+    <Nav />
   </v-card>
   <NuxtPage />
 </template>
