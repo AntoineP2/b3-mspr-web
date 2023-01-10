@@ -1,9 +1,11 @@
 <template>
   <v-card>
-    <!-- <TemplatesNav @colorChoice="color"></TemplatesNav> -->
     <Nav />
   </v-card>
-  <NuxtPage />
+  <div class="w-[70%] mt-[20px] ml-[15%]">
+    <NuxtPage/>
+  </div>
+  
 </template>
 
 <script>

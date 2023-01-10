@@ -1,21 +1,15 @@
 <template>
   <v-card>
-    <div class="flex justify-between p-0 m-0 h-12">
-      <div>
-        <v-tabs>
-          <NuxtLink to="/" ><v-tab>One</v-tab></NuxtLink>
-          <NuxtLink to="/autrePage"><v-tab>Two</v-tab></NuxtLink>
-          <v-tab>Three</v-tab>
-          <v-tab>Four</v-tab>
-        </v-tabs>
-      </div>
-    </div>
+    <v-tabs fixed-tabs>
+      <v-tab to="/"> <Icon name ='octicon:home-fill-24' size="30px" /><p>Acceuil</p></v-tab>
+      <v-tab to="/autrePage"><Icon name ='ion:chatbubble-outline' size="30px" /><p>A propos</p></v-tab>
+      <v-tab><Icon name ='ion:ios-log-in' size="30px" /><p>Login</p></v-tab>
+    </v-tabs>
   </v-card>
 </template>
 
 <script>
-export default {
-};
+export default {};
 </script>
 
 <style>
