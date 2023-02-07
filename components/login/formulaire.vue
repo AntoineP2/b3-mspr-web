@@ -12,6 +12,7 @@
               :counter="10"
               label="Pseudo"
               required
+            class="green--text text--lighten-2"
             ></v-text-field>
           </v-col>
   
@@ -27,6 +28,7 @@
               :append-icon-cb="() => (showPassword = !showPassword)"
               label="Mot de passe"
               required
+              class="green--text text--lighten-2"
             ></v-text-field>
           </v-col>
   
@@ -39,6 +41,7 @@
               :rules="emailRules"
               label="E-mail"
               required
+              class="green--text text--lighten-2"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -72,5 +75,15 @@
           value => /.+@.+\..+/.test(value) || 'E-mail doit être valide.',
         ],
       }),
-    }
+}
+    
   </script>
+
+<style>
+.green--text {
+  color: #4caf50 !important;
+}
+.text--lighten-2 {
+  font-weight: bold;
+}
+</style>
