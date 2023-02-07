@@ -14,8 +14,9 @@ export default {
         }
     },
     methods: {
-        setUsers() {
-            this.users = store.getAllUsers()
+        async setUsers() {
+            await store.getAllUsers()
+            this.users = store.$state.users.data[0].userMail
             console.log(this.users)
         },
             
