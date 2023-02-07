@@ -75,7 +75,8 @@
           value => /.+@.+\..+/.test(value) || 'E-mail doit être valide.',
         ],
       }),
-    }
+}
+    
   </script>
 
 <style>
