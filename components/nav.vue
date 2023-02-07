@@ -9,7 +9,7 @@
         ><Icon name="ion:chatbubble-outline" size="30px" />
         <p>A propos</p></v-tab
       >
-      <v-tab
+      <v-tab to="/login"
         ><Icon name="ion:ios-log-in" size="30px" />
         <p>Login</p></v-tab
       >
