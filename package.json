@@ -25,6 +25,6 @@
     "vuetify": "^3.0.6"
   },
   "overrides": {
-    "vue": "latest"
+    "vue": "*"
   }
 }
