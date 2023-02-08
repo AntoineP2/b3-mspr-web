@@ -22,7 +22,7 @@
     "@pinia/nuxt": "^0.4.6",
     "pinia": "^2.0.30",
     "sass": "^1.57.1",
-    "vuetify": "^3.0.6"
+    "vuetify": "*"
   },
   "overrides": {
     "vue": "*"
