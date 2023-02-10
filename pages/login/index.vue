@@ -1,7 +1,7 @@
 <template>
   <div>
     <LoginFormulaire />
-    <v-btn @click="setUsers">Get tusers</v-btn>
+    <v-btn @click="setUsers">Get users</v-btn>
   </div>
 </template>
 
