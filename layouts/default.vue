@@ -3,9 +3,8 @@
     <Nav />
   </v-card>
   <div class="w-[70%] mt-[20px] ml-[15%]">
-    <NuxtPage/>
+    <NuxtPage />
   </div>
-  
 </template>
 
 <script>

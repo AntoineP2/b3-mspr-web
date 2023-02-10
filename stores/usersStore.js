@@ -7,7 +7,7 @@ export const useUsersStore = defineStore("usersStore", {
 
   actions: {
     async getAllUsers() {
-      this.users = await useFetch("http://localhost:3000/todos/");
+      this.users = await useFetch("http://localhost:3005/todos/");
     },
   },
 });
