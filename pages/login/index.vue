@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LoginFormulaire />
+    <LoginFormulaireLogin />
     <v-btn @click="setUsers">Get users</v-btn>
   </div>
 </template>
