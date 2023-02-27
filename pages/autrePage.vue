@@ -1,16 +1,10 @@
 <template>
-  <p> nothing guys</p>
+  <div></div>
 </template>
-
-<script>
-export default {
-
-}
+  <script>
+export default {};
 </script>
-
-<style>
-
-</style>
+  
 <!-- <script setup>
 import { useUsersStore } from '~~/stores/usersStore';
 const store = useusersStore();

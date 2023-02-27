@@ -28,7 +28,12 @@
       </v-row>
       <v-row>
         <v-col cols="12" class="text-center">
-          <v-btn :disabled="!valid" color="primary">S'inscrire</v-btn>
+          <v-btn
+            :disabled="!valid"
+            color="primary"
+            @click="$emit('auth', pseudo, password)"
+            >Se connecter</v-btn
+          >
         </v-col>
       </v-row>
     </v-container>
@@ -50,7 +55,7 @@ export default {
     passwordRules: [
       (value) => !!value || "Mot de passe est requis.",
       (value) =>
-        value?.length >= 8 || "Mot de passe doit avoir au moins 8 caractères.",
+        value?.length >= 1 || "Mot de passe doit avoir au moins 8 caractères.",
     ],
   }),
 };

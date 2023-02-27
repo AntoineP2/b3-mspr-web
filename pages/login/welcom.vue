@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h1>{{ salut }}</h1>
-    <v-btn> UN BOUTON</v-btn>
+    <h1>{{ message }}</h1>
   </div>
 </template>
 <script>
@@ -11,7 +10,7 @@ const store = useUsersStore();
 export default {
   data() {
     return {
-      salut: "",
+      message: "",
       userName: "",
       userId: "",
     };
@@ -20,19 +19,16 @@ export default {
     this.isAuthentification();
   },
   methods: {
-    async setUsers() {
-      await store.getAllUsers();
-      this.users = store.$state.users.data[0].userMail;
-    },
     async isAuthentification() {
       try {
         await store.isAuthVerif(useCookie("tokenUser").value.token);
         this.userId = store.$state.isAuth.data.userId;
         await store.getUserById(this.userId);
         this.userName = store.$state.user.data[0].userPseudo;
-        this.salut = "Désolé " + this.userName + " il n'y a pas grand chose !";
+        this.message =
+          "Vous êtes authentifié, Bienvenue " + this.userName + " !";
       } catch (e) {
-        this.salut = "Vous n'êtes pas authentifié";
+        this.message = "Vous n'êtes pas authentifié";
       }
     },
   },

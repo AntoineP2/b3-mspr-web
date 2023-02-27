@@ -9,16 +9,45 @@
         ><Icon name="ion:chatbubble-outline" size="30px" />
         <p>A propos</p></v-tab
       >
-      <v-tab to="/login"
+      <v-tab v-if="!isAuth" to="/login"
         ><Icon name="ion:ios-log-in" size="30px" />
         <p>Login</p></v-tab
+      >
+      <v-tab v-if="isAuth" to="/login/welcom"
+        ><Icon name="ion:ios-log-in" size="30px" />
+        <p>Deconnexion</p></v-tab
       >
     </v-tabs>
   </v-card>
 </template>
 
 <script>
-export default {};
+import { useUsersStore } from "~~/stores/usersStore";
+const store = useUsersStore();
+export default {
+  data() {
+    return {
+      isAuth: false,
+    };
+  },
+  watch: {
+    $route() {
+      this.isAuthentification();
+    },
+  },
+
+  methods: {
+    async isAuthentification() {
+      // Si l'utilisateur est authentifié, on affiche le bouton deconnexion sinon, on affiche login
+      try {
+        await store.isAuthVerif(useCookie("tokenUser").value.token);
+        this.isAuth = true;
+      } catch (e) {
+        this.isAuth = false;
+      }
+    },
+  },
+};
 </script>
 
 <style>
