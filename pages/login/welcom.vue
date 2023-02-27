@@ -21,12 +21,12 @@ export default {
   methods: {
     async isAuthentification() {
       try {
-        await store.isAuthVerif(useCookie("tokenUser").value.token);
-        this.userId = store.$state.isAuth.data.userId;
-        await store.getUserById(this.userId);
-        this.userName = store.$state.user.data[0].userPseudo;
-        this.message =
-          "Vous êtes authentifié, Bienvenue " + this.userName + " !";
+        // await store.isAuthVerif(useCookie("tokenUser").value.token);
+        // this.userId = store.$state.isAuth.data.userId;
+        // await store.getUserById(this.userId);
+        // this.userName = store.$state.user.data[0].userPseudo;
+        // this.message =
+        //   "Vous êtes authentifié, Bienvenue " + this.userName + " !";
       } catch (e) {
         this.message = "Vous n'êtes pas authentifié";
       }
