@@ -6,8 +6,7 @@
 </template>
 <script>
 import { useUsersStore } from "~~/stores/usersStore";
-const store = useUsersStore();
-
+const config = useRuntimeConfig();
 export default {
   data() {
     return {
@@ -20,20 +19,16 @@ export default {
     this.isAuthentification();
   },
   methods: {
-    async setUsers() {
-      await store.getAllUsers();
-      this.users = store.$state.users.data[0].userMail;
-    },
     async isAuthentification() {
-      try {
-        await store.isAuthVerif(useCookie("tokenUser").value.token);
-        this.userId = store.$state.isAuth.data.userId;
-        await store.getUserById(this.userId);
-        this.userName = store.$state.user.data[0].userPseudo;
-        this.salut = "Désolé " + this.userName + " il n'y a pas grand chose !";
-      } catch (e) {
-        this.salut = "Vous n'êtes pas authentifié";
-      }
+      // try {
+      //   await store.isAuthVerif(useCookie("tokenUser").value.token);
+      //   this.userId = store.$state.isAuth.data.userId;
+      //   await store.getUserById(this.userId);
+      //   this.userName = store.$state.user.data[0].userPseudo;
+      //   this.salut = "Désolé " + this.userName + " il n'y a pas grand chose !";
+      // } catch (e) {
+      //   this.salut = "Vous n'êtes pas authentifié";
+      // }
     },
   },
 };

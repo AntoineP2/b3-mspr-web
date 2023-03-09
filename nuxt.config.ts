@@ -27,9 +27,15 @@ export default defineNuxtConfig({
       "process.env.DEBUG": false,
     },
   },
+  components: {
+    global: true,
+    dirs: ["~/components"],
+  },
+  ssr: false,
   runtimeConfig: {
     public: {
       publicKey: process.env.PUB_KEY_PATH,
+      privateKey: process.env.PRI_KEY_PATH,
     },
   },
 });

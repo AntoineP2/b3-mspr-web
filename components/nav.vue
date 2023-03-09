@@ -9,11 +9,11 @@
         ><Icon name="ion:chatbubble-outline" size="30px" />
         <p>A propos</p></v-tab
       >
-      <v-tab v-if="!isAuth" to="/login"
+      <v-tab v-if="!auth" to="/login"
         ><Icon name="ion:ios-log-in" size="30px" />
         <p>Login</p></v-tab
       >
-      <v-tab v-if="isAuth" to="/login/welcom"
+      <v-tab v-if="auth" to="/login/welcom"
         ><Icon name="ion:ios-log-in" size="30px" />
         <p>Deconnexion</p></v-tab
       >
@@ -22,12 +22,12 @@
 </template>
 
 <script>
-import { useUsersStore } from "~~/stores/usersStore";
-const store = useUsersStore();
+// const config = useRuntimeConfig(); // Il aime pas ça visiblement
+import isAuth from "../tools/utils/isAuth";
 export default {
   data() {
     return {
-      isAuth: false,
+      auth: false,
     };
   },
   watch: {
@@ -38,13 +38,8 @@ export default {
 
   methods: {
     async isAuthentification() {
-      // Si l'utilisateur est authentifié, on affiche le bouton deconnexion sinon, on affiche login
-      try {
-        await store.isAuthVerif(useCookie("tokenUser").value.token);
-        this.isAuth = true;
-      } catch (e) {
-        this.isAuth = false;
-      }
+      this.auth = await isAuth(useCookie("tokenAuth").value);
+      console.log(useCookie("tokenAuth").value);
     },
   },
 };
