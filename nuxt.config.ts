@@ -32,7 +32,6 @@ export default defineNuxtConfig({
     global: true,
     dirs: ["~/components"],
   },
-  ssr: false,
   runtimeConfig: {
     public: {
       publicKey: process.env.PUB_KEY_PATH,
