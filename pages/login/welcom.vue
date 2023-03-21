@@ -6,7 +6,9 @@
 <script>
 import { useUsersStore } from "~~/stores/usersStore";
 const store = useUsersStore();
-
+definePageMeta({
+  middleware: ['auth'],
+})
 export default {
   data() {
     return {

@@ -8,6 +8,9 @@
 import { useUsersStore } from "~~/stores/usersStore";
 import decodeToken from "../../tools/utils/decodeToken";
 const store = useUsersStore();
+definePageMeta({
+  middleware: ['auth'],
+})
 export default {
   data() {
     return {
@@ -22,7 +25,7 @@ export default {
       try {
         await store.login(pseudo, password);
         this.tokenUser = store.$state.auth.data;
-        useCookie("tokenAuth", { maxAge: 30 }).value = this.tokenUser;
+        useCookie("tokenAuth", { maxAge: 3600 }).value = this.tokenUser; // 1h
         this.$router.push("/login/welcom");
       } catch (e) {
         console.log(e);
