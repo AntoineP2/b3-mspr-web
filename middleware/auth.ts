@@ -6,7 +6,7 @@ export default defineNuxtRouteMiddleware(async (to) => {
     return navigateTo("/login");
   }
   //* On vérifie sur l'utilisateur est authentifié, si il l'est, on le redirige vers la page d'accueil
-  if ((await isAuth(useCookie("tokenAuth").value)) && to.path === "/login") {
+  if ((await isAuth(useCookie("tokenAuth").value)) && to.path === ("/login" || "/inscription")) {
     return navigateTo("/login/welcom");
   }
 });

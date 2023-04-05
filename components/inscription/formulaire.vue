@@ -47,7 +47,7 @@
         </v-row>
         <v-row>
           <v-col cols="12" class="text-center">
-            <v-btn :disabled="!valid" color="primary">S'inscrire</v-btn>
+            <v-btn :disabled="!valid" color="primary" @click="$emit('inscription', pseudo, email, password)">S'inscrire</v-btn>
           </v-col>
         </v-row>
       </v-container>

@@ -13,6 +13,10 @@
         ><Icon name="ion:ios-log-in" size="30px" />
         <p>Login</p></v-tab
       >
+      <v-tab v-if="!auth" to="/inscription"
+        ><Icon name="ion:ios-log-in" size="30px" />
+        <p>Inscription</p></v-tab
+      >
       <v-tab v-if="auth" to="/logout"
         ><Icon name="ion:ios-log-in" size="30px" />
         <p>Deconnexion</p></v-tab

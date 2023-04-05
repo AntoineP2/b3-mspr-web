@@ -29,5 +29,12 @@ export const useUsersStore = defineStore("usersStore", {
     async getUserById(id) {
       this.user = await useFetch(`http://localhost:3005/user/id?id=${id}`);
     },
+
+    async inscription (userPseudo, userMail, userPassword){
+      await useFetch("http://localhost:3005/user/inscription", {
+        method: "POST",
+        body: JSON.stringify({ userPseudo: userPseudo, userMail : userMail, userPassword: userPassword }),
+      });
+    }
   },
 });
