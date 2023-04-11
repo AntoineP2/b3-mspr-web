@@ -1,6 +1,6 @@
 import * as jose from "jose";
 const config = useRuntimeConfig();
-
+// Ce fichier permet de décoder le token
 export default async function decodeToken(token) {
   try {
     const key = config.publicKey;

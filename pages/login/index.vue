@@ -41,6 +41,7 @@
 <script>
 import { useUsersStore } from "~~/stores/usersStore";
 import decodeToken from "../../tools/utils/decodeToken";
+import encodePassword from "~~/tools/utils/encodePassword";
 const store = useUsersStore();
 definePageMeta({
   middleware: ["auth"],
@@ -59,7 +60,7 @@ export default {
   methods: {
     async login(pseudo, password) {
       try {
-        await store.login(pseudo, password);
+        await store.login(pseudo, encodePassword(password));
         this.tokenUser = store.$state.auth.data;
         useCookie("tokenAuth", { maxAge: 3600 }).value = this.tokenUser; // 1h
         this.dialog1 = false;
@@ -71,8 +72,9 @@ export default {
     },
     async inscription(userPseudo, userMail, userPassword) {
         try{
-            await store.inscription(userPseudo, userMail, userPassword) // On envoie les infos a la BDD pour verifier si l'user est déjà inscrit et on l'enregistre
-            this.dialog1 = false;
+          const encodedPassword = encodePassword(userPassword) // On encode le mdp
+            await store.inscription(userPseudo, userMail, encodedPassword) // On envoie les infos a la BDD pour verifier si l'user est déjà inscrit et on l'enregistre
+            this.dialog2 = false;
         }
         catch(err){
             return console.log(err)
