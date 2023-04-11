@@ -11,11 +11,7 @@
       >
       <v-tab v-if="!auth" to="/login"
         ><Icon name="ion:ios-log-in" size="30px" />
-        <p>Login</p></v-tab
-      >
-      <v-tab v-if="!auth" to="/inscription"
-        ><Icon name="ion:ios-log-in" size="30px" />
-        <p>Inscription</p></v-tab
+        <p>Login / Inscription</p></v-tab
       >
       <v-tab v-if="auth" to="/logout"
         ><Icon name="ion:ios-log-in" size="30px" />

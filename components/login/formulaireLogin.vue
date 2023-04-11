@@ -1,7 +1,7 @@
 <template>
   <v-form v-model="valid">
     <v-container>
-      <v-row>
+      <v-row justify="center">
         <v-col cols="12" md="4">
           <v-text-field
             v-model="pseudo"
