@@ -4,6 +4,7 @@ export const useUsersStore = defineStore("usersStore", {
       users: "",
       user: "",
       auth: "",
+      register: "",
       isAuth: false,
     };
   },
@@ -30,11 +31,15 @@ export const useUsersStore = defineStore("usersStore", {
       this.user = await useFetch(`http://localhost:3005/user/id?id=${id}`);
     },
 
-    async inscription (userPseudo, userMail, userPassword){
-      await useFetch("http://localhost:3005/user/inscription", {
+    async inscription(userPseudo, userMail, userPassword) {
+      this.register = await useFetch("http://localhost:3005/user/inscription", {
         method: "POST",
-        body: JSON.stringify({ userPseudo: userPseudo, userMail : userMail, userPassword: userPassword }),
+        body: JSON.stringify({
+          userPseudo: userPseudo,
+          userMail: userMail,
+          userPassword: userPassword,
+        }),
       });
-    }
+    },
   },
 });
