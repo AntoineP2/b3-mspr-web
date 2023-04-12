@@ -2,11 +2,15 @@
   <v-card>
     <v-tabs fixed-tabs>
       <v-tab to="/">
-        <Icon name="octicon:home-fill-24" size="30px" />
+        <Icon name="🏡 " size="30px" />
         <p>Acceuil</p></v-tab
       >
+      <v-tab to="/gardes">
+        <Icon name="🪴 " size="30px" />
+        <p>Gardes proposées</p></v-tab
+      >
       <v-tab to="/autrePage"
-        ><Icon name="ion:chatbubble-outline" size="30px" />
+        ><Icon name="💬 " size="30px" />
         <p>A propos</p></v-tab
       >
       <v-tab v-if="!auth" to="/login"
@@ -44,5 +48,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
