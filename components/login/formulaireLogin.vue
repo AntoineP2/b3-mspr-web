@@ -1,46 +1,37 @@
 <template>
-  <v-form v-model="valid">
+  <v-card variant="tonal" class="w-3/5">
     <v-container>
-      <v-row justify="center">
-        <v-col cols="12" md="4">
-          <v-text-field
-            v-model="pseudo"
-            :rules="nameRules"
-            :counter="10"
-            label="Pseudo"
-            required
-            class="green--text text--lighten-2"
-          ></v-text-field>
-        </v-col>
-
-        <v-col cols="12" md="4">
-          <v-text-field
-            v-model="password"
-            :rules="passwordRules"
-            :type="showPassword ? 'text' : 'password'"
-            :append-icon="showPassword ? 'visibility_off' : 'visibility'"
-            :append-icon-cb="() => (showPassword = !showPassword)"
-            label="Mot de passe"
-            required
-            class="green--text text--lighten-2"
-          ></v-text-field>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col cols="12" class="text-center">
+      <v-form v-model="valid">
+        <v-text-field
+          v-model="pseudo"
+          :rules="nameRules"
+          :counter="10"
+          label="Pseudo"
+          required
+          class="green--text text--lighten-2"
+        ></v-text-field>
+        <v-text-field
+          v-model="password"
+          :rules="passwordRules"
+          :type="showPassword ? 'text' : 'password'"
+          label="Mot de passe"
+          required
+          class="green--text text--lighten-2"
+        ></v-text-field>
+        <div class="flex justify-center">
           <v-btn
             :disabled="!valid"
             color="primary"
             @click="$emit('auth', pseudo, password)"
             >Se connecter</v-btn
           >
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-form>
+        </div>
+      </v-form>
+    </v-container></v-card
+  >
 </template>
-  
-  <script>
+
+<script>
 export default {
   data: () => ({
     valid: false,

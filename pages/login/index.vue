@@ -1,40 +1,13 @@
 <template>
-  <div class="flex justify-center items-center">
-    <v-row justify="center">
-        <v-col cols="12" md="4">
-           <!-- BOUTON CONNEXION -->
-          <v-btn>
-        Se connecter
-        <v-dialog v-model="dialog1" activator="parent">
-          <v-card>
-            <v-card-text> <LoginFormulaireLogin @auth="login" /></v-card-text>
-            <v-card-actions>
-              <v-btn color="primary" block @click="dialog1 = false"
-                >Close Dialog</v-btn
-              >
-            </v-card-actions>
-          </v-card>
-        </v-dialog>
-        <!-- BOUTON D'INSCRIPTION -->
-      </v-btn>
-        </v-col>
-        <v-col cols="12" md="4">
-          <v-btn>
-        S'inscrire
-        <v-dialog v-model="dialog2" activator="parent">
-          <v-card>
-            <v-card-text> <InscriptionFormulaire @inscription="inscription" /></v-card-text>
-            <v-card-actions>
-              <v-btn color="primary" block @click="dialog2 = false"
-                >Close Dialog</v-btn
-              >
-            </v-card-actions>
-          </v-card>
-        </v-dialog>
-      </v-btn>
-        </v-col>
-    </v-row>
-      
+  <div>
+    <LoginFormulaireLogin @auth="login" />
+    <v-card title="Pas encore inscrit ?" variant="tonal" class="w-3/5 mt-9">
+      <v-container>
+        <div class="flex justify-center">
+          <v-btn color="primary" to="/inscription"> INSCRIPTION </v-btn>
+        </div>
+      </v-container>
+    </v-card>
   </div>
 </template>
 
@@ -68,18 +41,7 @@ export default {
       } catch (e) {
         console.log(e);
       }
-      // Cette méthode renvoie true ou false selon si l'utilisateur est authentifié ou non
     },
-    async inscription(userPseudo, userMail, userPassword) {
-        try{
-          const encodedPassword = encodePassword(userPassword) // On encode le mdp
-            await store.inscription(userPseudo, userMail, encodedPassword) // On envoie les infos a la BDD pour verifier si l'user est déjà inscrit et on l'enregistre
-            this.dialog2 = false;
-        }
-        catch(err){
-            return console.log(err)
-        }
-      },
   },
 };
 </script>
