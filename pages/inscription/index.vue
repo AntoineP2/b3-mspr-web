@@ -1,15 +1,17 @@
 <template>
-  <InscriptionFormulaire @inscription="inscription" />
-  <v-card color="red" class="mt-6" v-if="registerEchec"
-    ><div class="flex justify-center p-3">
-      <p>Identifiant ou Email déjà utilisé ! :(</p>
-    </div></v-card
-  >
-  <v-card color="green" class="mt-6" v-if="registerComplet"
-    ><div class="flex justify-center p-3">
-      <p>Inscription Validé ! :)</p>
-    </div></v-card
-  >
+  <div class="flex justify-center">
+    <InscriptionFormulaire @inscription="inscription" />
+    <v-card color="red" class="mt-6" v-if="registerEchec"
+      ><div class="flex justify-center p-3">
+        <p>Identifiant ou Email déjà utilisé ! :(</p>
+      </div></v-card
+    >
+    <v-card color="green" class="mt-6" v-if="registerComplet"
+      ><div class="flex justify-center p-3">
+        <p>Inscription Validé ! :)</p>
+      </div></v-card
+    >
+  </div>
 </template>
 <script>
 import { useUsersStore } from "~~/stores/usersStore";
