@@ -37,7 +37,7 @@ export default {
         this.tokenUser = store.$state.auth.data;
         useCookie("tokenAuth", { maxAge: 3600 }).value = this.tokenUser; // 1h
         this.dialog1 = false;
-        this.$router.push("/login/welcom");
+        this.$router.push("/");
       } catch (e) {
         console.log(e);
       }
