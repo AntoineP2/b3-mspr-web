@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center">
+  <div class="flex justify-center pt-10">
     <InscriptionFormulaire @inscription="inscription" />
     <v-card color="red" class="mt-6" v-if="registerEchec"
       ><div class="flex justify-center p-3">
