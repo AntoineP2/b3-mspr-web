@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-col items-center pt-10">
     <LoginFormulaireLogin @auth="login" />
     <v-card title="Pas encore inscrit ?" variant="tonal" class="w-3/5 mt-9">
       <v-container>
