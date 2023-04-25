@@ -1,5 +1,5 @@
 <template>
   <div>
-    <p>Coucou toi // / gardes</p>
+    <p>Coucou toi // / Gardes</p>
   </div>
 </template>
