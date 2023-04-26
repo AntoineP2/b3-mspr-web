@@ -8,23 +8,19 @@ export const usePlantesStore = defineStore("plantesStore", {
       plantName: "",
       plantDescription: "",
       plantPicture: "",
+      // HEYYY
+      plants: "",
     };
   },
 
   actions: {
-    async getPlantsByUser(ownerId) {
-      this.plantsByUser = await useFetch(
-        "http://localhost:3005/plant/plantsByUser"
-      );
-    },
-
     async delPlantById(id) {
       await useFetch("http://localhost:3005/plant/delPlant");
     },
 
     async getPlantsByAnnonce(annonceId) {
-      this.plantsByAnnonce = await useFetch(
-        "http://localhost:3005/plant/plantsByAnnonce"
+      this.plants = await useFetch(
+        `http://localhost:3005/plant/plantsByAnnonce?annonceId=${annonceId}`
       );
     },
 
