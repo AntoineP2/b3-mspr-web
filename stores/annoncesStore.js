@@ -10,12 +10,15 @@ export const useAnnoncesStore = defineStore("annoncesStore", {
       plantCount: "",
       location: "",
       annonceDescription: "",
+      //heyyyyyy
+      annonces: "",
+      annonce: "",
     };
   },
 
   actions: {
     async getAllAnnonces() {
-      this.allAnnonces = await useFetch(
+      this.annonces = await useFetch(
         "http://localhost:3005/annonce/allAnnonces"
       );
     },
@@ -24,9 +27,9 @@ export const useAnnoncesStore = defineStore("annoncesStore", {
       await useFetch("http://localhost:3005/annonce/delAnnonce");
     },
 
-    async getAnnoncesByUser(ownerId) {
-      this.userAnnonce = await useFetch(
-        "http://localhost:3005/annonce/annoncesByUser"
+    async getAnnonceById(id) {
+      this.annonce = await useFetch(
+        `http://localhost:3005/annonce/annoncesById?ID=${id}`
       );
     },
 
