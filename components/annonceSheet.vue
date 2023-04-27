@@ -11,7 +11,14 @@
     <v-card-subtitle class="mt-4"
       >Annonce posté par : {{ annonce.userPseudo }}
     </v-card-subtitle>
-    <v-card-text> {{ annonce.annonceDescription }}</v-card-text>
+    <v-card-text>
+      <p class="mt-4 mb-4">
+        <Icon name="zondicons:calendar" size="20px" class="mr-2" />
+        {{ annonce.startDate }} -
+        {{ annonce.endDate }}
+      </p>
+      {{ annonce.annonceDescription }}</v-card-text
+    >
 
     <v-card-actions>
       <v-btn color="green" @click="$emit('goTo', annonce.ID)">
