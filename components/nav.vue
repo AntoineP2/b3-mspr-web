@@ -5,11 +5,7 @@
         <Icon name="mdi-home-circle" size="30px" />
         <p>Acceuil</p></v-tab
       >
-      <v-tab v-if="auth" to="/gardes">
-        <Icon name="mdi-flower-tulip" size="30px" />
-        <p>Garder</p></v-tab
-      >
-      <v-tab v-if="auth" to="/confier/">
+      <v-tab v-if="auth" to="/user/confier/">
         <Icon name="mdi-flower-tulip-outline" size="30px" />
         <p>Confier</p></v-tab
       >
@@ -17,15 +13,11 @@
         <Icon name="mdi-alpha-a-circle-outline" size="30px" />
         <p>Annonces</p></v-tab
       >
-      <v-tab v-if="auth" to="/conseils/"
-        ><Icon name="mdi-thought-bubble-outline" size="30px" />
-        <p>Conseils</p></v-tab
-      >
-      <v-tab v-if="auth" to="/compte/"
+      <v-tab v-if="auth" to="/user/compte/"
         ><Icon name="mdi-account-circle" size="30px" />
         <p>Compte</p></v-tab
       >
-      <v-tab to="/autrePage/"
+      <v-tab to="/about/"
         ><Icon name="mdi-information-outline" size="30px" />
         <p>A propos</p></v-tab
       >
@@ -33,7 +25,7 @@
         ><Icon name="mdi-login" size="30px" />
         <p>Login / Inscription</p></v-tab
       >
-      <v-tab v-if="auth" to="/logout/"
+      <v-tab v-if="auth" to="/user/logout/"
         ><Icon name="mdi-logout" size="30px" />
         <p>Deconnexion</p></v-tab
       >

@@ -1,6 +1,13 @@
 <template>
   <div>
-    <AnnonceComponent @goTo="goTo" :annonces="annonces" />
+    <div class="grid grid-cols-3 gap-4">
+      <AnnonceSheet
+        v-for="annonce in annonces"
+        :key="annonce.ID"
+        @goTo="goTo"
+        :annonce="annonce"
+      />
+    </div>
   </div>
 </template>
 

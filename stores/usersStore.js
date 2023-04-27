@@ -30,6 +30,9 @@ export const useUsersStore = defineStore("usersStore", {
     async getUserById(id) {
       this.user = await useFetch(`http://localhost:3005/user/id?id=${id}`);
     },
+    async getReturnUserById(id) {
+      return await useFetch(`http://localhost:3005/user/id?id=${id}`);
+    },
 
     async inscription(userPseudo, userMail, userPassword) {
       this.register = await useFetch("http://localhost:3005/user/inscription", {
