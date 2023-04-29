@@ -17,6 +17,10 @@
         ><Icon name="mdi-account-circle" size="30px" />
         <p>Compte</p></v-tab
       >
+      <v-tab to="/user/advice/" v-if="auth"
+        ><Icon name="game-icons:carnivorous-plant" size="35px" class="" />
+        <p>Les Conseils</p></v-tab
+      >
       <v-tab to="/about/"
         ><Icon name="mdi-information-outline" size="30px" />
         <p>A propos</p></v-tab

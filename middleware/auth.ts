@@ -13,6 +13,6 @@ export default defineNuxtRouteMiddleware(async (to) => {
     (await isAuth(useCookie("tokenAuth").value)) &&
     to.path === "/login || /inscription"
   ) {
-    return navigateTo("/user/welcom");
+    return navigateTo("/acceuil");
   }
 });

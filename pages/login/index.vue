@@ -13,7 +13,6 @@
 
 <script>
 import { useUsersStore } from "~~/stores/usersStore";
-import decodeToken from "../../tools/utils/decodeToken";
 import encodePassword from "~~/tools/utils/encodePassword";
 const store = useUsersStore();
 definePageMeta({
