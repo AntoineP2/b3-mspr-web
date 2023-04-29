@@ -13,6 +13,7 @@ export const useAnnoncesStore = defineStore("annoncesStore", {
       //heyyyyyy
       annonces: "",
       annonce: "",
+      addAnnonceStatus: "",
     };
   },
 
@@ -40,9 +41,10 @@ export const useAnnoncesStore = defineStore("annoncesStore", {
       plantCount,
       annonceDescription,
       location,
-      annonceTitle
+      annonceTitle,
+      annoncePicture
     ) {
-      this.addAnnonce = await useFetch(
+      this.addAnnonceStatus = await useFetch(
         `http://localhost:3005/annonce/addAnnonce`,
         {
           method: "POST",
@@ -54,6 +56,7 @@ export const useAnnoncesStore = defineStore("annoncesStore", {
             annonceDescription: annonceDescription,
             location: location,
             annonceTitle: annonceTitle,
+            annoncePicture: annoncePicture,
           }),
         }
       );

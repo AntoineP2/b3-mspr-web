@@ -17,6 +17,10 @@
         {{ annonce.startDate }} -
         {{ annonce.endDate }}
       </p>
+      <p class="mt-4 mb-4">
+        <Icon name="game-icons:carnivorous-plant" size="25px" class="" />
+        {{ annonce.plantCount }} Plante(s)
+      </p>
       {{ annonce.annonceDescription }}</v-card-text
     >
 
