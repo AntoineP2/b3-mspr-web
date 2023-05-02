@@ -20,6 +20,9 @@ export const usePlantesStore = defineStore("plantesStore", {
       await useFetch("http://localhost:3005/plant/delPlant");
     },
 
+
+    // ------------------ GET -------------------
+
     async getPlantsByAnnonce(annonceId) {
       // Fonctionnelle
       this.plants = await useFetch(
@@ -33,6 +36,9 @@ export const usePlantesStore = defineStore("plantesStore", {
         `http://localhost:3005/plant/adviceByPlantId?plantId=${plantId}`
       );
     },
+
+
+    // ------------------ POST -------------------
 
     async postAddPlant(ownerId, plantName, plantDescription, plantPicture) {
       // Pas testé

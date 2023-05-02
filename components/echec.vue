@@ -14,7 +14,7 @@
       size="112"
     ></v-icon>
 
-    <h2 class="text-h5 mb-6">Echec de l'enregistrement de l'annonce !</h2>
+    <h2 class="text-h5 mb-6"> {{  message }}</h2>
 
     <v-divider class="mb-4"></v-divider>
     <div class="text-end">
@@ -24,7 +24,7 @@
         rounded
         variant="flat"
         width="120"
-        @click="$router.push('/user/confier')"
+        @click="$router.push(route)"
       >
         Recommencer
       </v-btn>
@@ -33,7 +33,18 @@
 </template>
   
   <script>
-export default {};
+export default {
+  props: {
+    message: {
+      type: Boolean,
+      required: true,
+    },
+    route: {
+      type: String,
+      required: true,
+    },
+  },
+};
 </script>
   
   <style>

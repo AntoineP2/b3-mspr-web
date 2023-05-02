@@ -1,13 +1,8 @@
 <template>
   <div class="flex flex-col items-center pt-10">
     <ConfierFormulaire @addAnnonce="addAnnonce" v-if="!succes && !echec" />
-    <v-card color="red" class="mt-6" v-if="echec"
-      ><div class="flex justify-center p-3">
-        <p>Erreur lors de l'enregistrement de l'annonce !</p>
-      </div></v-card
-    >
-    <Succes v-if="succes" />
-    <Echec v-if="echec" />
+    <Succes message=" Votre annonce a été enregistrer :)" route="/annonces" v-if="succes" />
+    <Echec message="Echec lors de l'enregistrement :(" route="/user/confier" v-if="echec" />
   </div>
 </template>
 

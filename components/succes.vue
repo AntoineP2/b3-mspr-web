@@ -13,7 +13,7 @@
       size="112"
     ></v-icon>
 
-    <h2 class="text-h5 mb-6">Annonce enregistrée avec succès !</h2>
+    <h2 class="text-h5 mb-6"> {{ message }}</h2>
 
     <v-divider class="mb-4"></v-divider>
     <div class="text-end">
@@ -23,16 +23,27 @@
         rounded
         variant="flat"
         width="90"
-        @click="$router.push('/annonces')"
+        @click="$router.push(route)"
       >
-        Validé
+        Valider
       </v-btn>
     </div>
   </v-sheet>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    message: {
+      type: Boolean,
+      required: true,
+    },
+    route: {
+      type: String,
+      required: true,
+    },
+  },
+};
 </script>
 
 <style>
